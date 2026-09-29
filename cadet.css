@@ -1,0 +1,1322 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #17351d;
+    --primary-light: #28552f;
+    --primary-hover: #32673a;
+
+    --gold: #c9a227;
+    --gold-light: #f5e6a8;
+
+    --background: #f5f7f6;
+    --white: #ffffff;
+
+    --text: #202820;
+    --muted: #788078;
+
+    --border: #e6e9e6;
+
+    --blue: #3978d6;
+    --green: #2e8b57;
+    --orange: #e59b28;
+    --red: #c94c4c;
+    --purple: #8057c7;
+
+    --shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* Minimum readable text size across the cadet portal. */
+body p,
+body span,
+body label,
+body td,
+body th,
+body button,
+body input,
+body select,
+body textarea {
+    font-size: 14px !important;
+}
+
+body small {
+    font-size: 12px !important;
+}
+
+.sidebar .nav-link {
+    font-size: 13px !important;
+}
+
+/* Keep compact portal labels consistent with the dashboard description size. */
+.brand-text span,
+.topbar small,
+.welcome-info p,
+.notice,
+.kpi span,
+.kpi small,
+.card-header p,
+.page-heading p,
+.info-item span,
+.empty-state,
+.training-info p,
+.training-info small {
+    font-size: 12px !important;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 255px;
+    height: 100vh;
+
+    background: var(--primary);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+
+    transition: 0.3s ease;
+
+    overflow-y: auto;
+}
+
+.sidebar,
+.sidebar a,
+.sidebar button,
+.main button,
+.main a,
+.main input,
+.main select,
+.main textarea {
+    pointer-events: auto;
+}
+
+
+/* BRAND */
+
+.brand {
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.brand-logo {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.brand-text h2 {
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+.brand-text span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #aebcaf;
+
+    font-size: 10px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    padding: 20px 12px;
+}
+
+.menu-title {
+    color: #829485;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin: 8px 10px 10px;
+}
+
+.nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 12px 13px;
+
+    margin-bottom: 4px;
+
+    color: #d6dfd7;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    border-radius: 7px;
+
+    transition: 0.2s;
+
+    cursor: pointer;
+}
+
+.nav-link span:first-child {
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.08);
+    color: white;
+}
+
+.nav-link.active {
+    background: var(--primary-light);
+
+    color: white;
+
+    box-shadow: inset 3px 0 var(--gold);
+}
+
+
+/* SIDEBAR BOTTOM */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    padding: 15px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.user-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 4px;
+}
+
+.user-mini strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.user-mini small {
+    color: #9eaa9f;
+
+    font-size: 9px;
+}
+
+
+/* AVATAR */
+
+.avatar {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* LOGOUT */
+
+.logout-btn {
+    width: 100%;
+
+    position: relative;
+    z-index: 1001;
+
+    pointer-events: auto;
+
+    border: 0;
+
+    padding: 11px;
+
+    border-radius: 6px;
+
+    background: #a93131;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background: #c73b3b;
+}
+
+
+/* MAIN */
+
+.main {
+    margin-left: 255px;
+
+    min-height: 100vh;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    height: 80px;
+
+    background: white;
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 28px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 500;
+}
+
+.topbar h1 {
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+.topbar p {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-top: 4px;
+}
+
+.profile {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+.profile strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.profile small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    margin-top: 2px;
+}
+
+
+/* MENU */
+
+.menu-btn {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    margin-right: 15px;
+}
+
+
+/* CONTENT */
+
+.content{
+    min-height:calc(100vh - 78px);
+    padding:28px;
+
+    /* KEEPING YOUR CAMPUS BACKGROUND */
+    background-image:
+        linear-gradient(
+            rgba(245,247,246,.76),
+            rgba(245,247,246,.76)
+        ),
+        url("mdc.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.content > #dashboard > #grades,
+.content > #dashboard > #conduct,
+.content > #dashboard > #attendance,
+.content > #dashboard > #evaluation,
+.content > #dashboard > #training,
+.content > #dashboard > #announcements {
+    display: none !important;
+    animation: cadetPageIn .2s ease;
+}
+
+.content > #dashboard > #grades.active-section,
+.content > #dashboard > #conduct.active-section,
+.content > #dashboard > #attendance.active-section,
+.content > #dashboard > #evaluation.active-section,
+.content > #dashboard > #training.active-section,
+.content > #dashboard > #announcements.active-section {
+    display: block !important;
+}
+
+#dashboard.child-section-view > * {
+    display: none;
+}
+
+#dashboard.child-section-view > .active-section {
+    display: block;
+}
+
+@keyframes cadetPageIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.page-heading {
+    margin-bottom: 20px;
+}
+
+.page-heading h2 {
+    font-size: 20px;
+}
+
+.page-heading p {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-top: 5px;
+}
+
+
+/* WELCOME */
+
+.welcome-card {
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 10px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.welcome-avatar {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--primary);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 800;
+
+    font-size: 16px;
+}
+
+.welcome-info {
+    flex: 1;
+}
+
+.welcome-info h2 {
+    font-size: 19px;
+
+    margin-bottom: 5px;
+}
+
+.welcome-info p {
+    color: #bdcabe;
+
+    font-size: 10px;
+}
+
+.view-only {
+    background: rgba(255,255,255,0.1);
+
+    color: #e2cf76;
+
+    padding: 9px 13px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* NOTICE */
+
+.notice {
+    background: #fffdf2;
+
+    border: 1px solid #eee2a8;
+
+    border-left: 4px solid var(--gold);
+
+    border-radius: 7px;
+
+    padding: 14px 16px;
+
+    color: #615829;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+}
+
+.notice strong:first-child {
+    color: var(--primary);
+}
+
+
+/* KPI */
+
+.kpi-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.kpi {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    padding: 18px;
+
+    box-shadow: var(--shadow);
+}
+
+.kpi span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-bottom: 5px;
+}
+
+.kpi strong {
+    display: block;
+
+    font-size: 23px;
+
+    margin-bottom: 5px;
+}
+
+.kpi small {
+    color: #929a93;
+
+    font-size: 9px;
+}
+
+.kpi.attendance strong {
+    color: var(--blue);
+}
+
+.kpi.merit strong {
+    color: var(--green);
+}
+
+.kpi.demerit strong {
+    color: var(--red);
+}
+
+
+/* CARDS */
+
+.card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    padding: 20px;
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 18px;
+}
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.card-header h3 {
+    font-size: 14px;
+}
+
+.card-header p {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-top: 4px;
+}
+
+.view-label {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    background: #f2f4f2;
+
+    padding: 6px 9px;
+
+    border-radius: 20px;
+}
+
+.cadet-qr-card {
+    text-align: center;
+}
+
+.cadet-qr {
+    width: 220px;
+    min-height: 220px;
+    margin: 0 auto;
+    padding: 8px;
+    border: 1px solid var(--border);
+    background: #fff;
+}
+
+.cadet-qr img,
+.cadet-qr canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* INFORMATION */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.info-item {
+    background: #f7f8f7;
+
+    padding: 14px;
+
+    border-radius: 6px;
+}
+
+.cadet-weighted-card{margin-top:12px;padding:14px;border:1px solid #d5e7d8;border-radius:10px;background:#eef6f0}
+.cadet-weighted-card-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.cadet-weighted-card-header strong{display:block;color:#17351d;font-size:14px}
+.cadet-weighted-card-header small{display:block;margin-top:3px;color:#5f6f60;font-size:10px}
+.cadet-weighted-final{color:#1f6b3c;font-size:24px;font-weight:800}
+.cadet-weighted-components{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.cadet-weighted-components div{display:flex;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:7px;background:#fff;color:#405247;font-size:10px}
+.cadet-weighted-components strong{color:#17351d}
+.cadet-weighted-components strong small{color:#718077;font-size:9px}
+
+.info-item span {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    margin-bottom: 5px;
+}
+
+.info-item strong {
+    font-size: 11px;
+}
+
+
+/* GRADE FILTER */
+
+.grade-filter {
+    margin-bottom: 15px;
+}
+
+.grade-filter select {
+    padding: 9px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: white;
+
+    color: var(--text);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+/* GRADE ITEMS */
+
+.grade-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 14px;
+
+    background: #f8faf8;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    margin-bottom: 9px;
+}
+
+.grade-item:last-child {
+    margin-bottom: 0;
+}
+
+.grade-subject strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.grade-subject small {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    margin-top: 4px;
+
+    display: block;
+}
+
+.grade-score {
+    font-size: 16px;
+
+    font-weight: 800;
+
+    color: var(--primary);
+}
+
+
+/* CONDUCT */
+
+.conduct-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    margin-bottom: 9px;
+}
+
+.conduct-item:last-child {
+    margin-bottom: 0;
+}
+
+.conduct-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-weight: 800;
+}
+
+.conduct-icon.merit {
+    background: #e5f5ea;
+
+    color: var(--green);
+}
+
+.conduct-icon.demerit {
+    background: #ffe5e5;
+
+    color: var(--red);
+}
+
+.conduct-info {
+    flex: 1;
+}
+
+.conduct-info strong {
+    display: block;
+
+    font-size: 11px;
+}
+
+.conduct-info small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    margin-top: 4px;
+}
+
+.conduct-points {
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.conduct-points.positive {
+    color: var(--green);
+}
+
+.conduct-points.negative {
+    color: var(--red);
+}
+
+
+/* TABLE */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 500px;
+}
+
+thead {
+    background: #f6f8f6;
+}
+
+th {
+    padding: 12px;
+
+    text-align: left;
+
+    color: #697269;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 14px 12px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 10px;
+
+    color: #414841;
+}
+
+tbody tr:hover {
+    background: #fafbfa;
+}
+
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* STATUS */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 600;
+}
+
+.status.present,
+.status.excused {
+    background: #e3f4e8;
+
+    color: #287742;
+}
+
+.status.absent {
+    background: #ffe4e4;
+
+    color: #ad3535;
+}
+
+.status.late {
+    background: #fff0d2;
+
+    color: #9a6a00;
+}
+
+
+/* EMPTY */
+
+.empty-state {
+    text-align: center;
+
+    padding: 30px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+.training-list {
+    display: grid;
+    gap: 14px;
+}
+
+.training-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #f8faf9;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.training-date {
+    width: 64px;
+    height: 70px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, var(--green), var(--green-dark));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.training-date strong {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.training-date span {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-top: 4px;
+}
+
+.training-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.training-info h4 {
+    margin: 7px 0;
+    font-size: 13px;
+    color: #1a241d;
+}
+
+.training-info p {
+    margin: 4px 0;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.training-badge {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #e7efff;
+    color: #2868d8;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* MODAL */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal {
+    width: 350px;
+
+    max-width: 90%;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.cadet-training-view-modal {
+    position: fixed;
+    left: calc(50% + 127.5px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(900px, calc(100vw - 48px));
+    max-width: calc(100vw - 48px);
+    min-height: 500px;
+    padding: 46px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cadet-training-view-modal .card-header {
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+.cadet-training-view-modal .modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 22px !important;
+    padding: 8px 12px;
+}
+
+.cadet-training-view-modal h2 {
+    margin: 14px 0;
+    font-size: 28px !important;
+    line-height: 1.25;
+}
+
+.cadet-training-view-modal p {
+    margin: 14px 0;
+    font-size: 18px !important;
+    line-height: 1.5;
+}
+
+.cadet-training-view-modal .training-badge {
+    font-size: 16px !important;
+    padding: 7px 13px;
+}
+
+.cadet-training-instruction {
+    margin-top: 24px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #f8faf8;
+}
+
+.cadet-training-instruction strong {
+    font-size: 18px;
+}
+
+.modal-icon {
+    width: 55px;
+    height: 55px;
+
+    background: #ffe5e5;
+
+    color: var(--red);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin: 0 auto 15px;
+
+    font-size: 22px;
+}
+
+.modal h2 {
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.modal p {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-bottom: 25px;
+}
+
+.modal-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.secondary-btn,
+.danger-btn {
+    border: 0;
+
+    padding: 10px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
+
+.secondary-btn {
+    background: #edf0ed;
+
+    color: #4d564e;
+}
+
+.danger-btn {
+    background: var(--red);
+
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .cadet-training-view-modal {
+        left: 50%;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .profile > div:last-child {
+        display: none;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+
+}
